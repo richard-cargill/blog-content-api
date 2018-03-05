@@ -1,0 +1,34 @@
+{
+  "name": "blog-content-api",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "micro-dev",
+    "start": "micro",
+    "lint": "xo",
+    "test": "npm run lint && ava"
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "xo": {
+    "extends": "prettier"
+  },
+  "dependencies": {
+    "contentful": "^5.1.3",
+    "dotenv": "^5.0.1",
+    "marked": "^0.3.17",
+    "micro": "latest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "0.21.0",
+    "eslint-config-prettier": "2.3.0",
+    "micro-dev": "latest",
+    "prettier": "1.5.3",
+    "request": "^2.83.0",
+    "request-promise": "4.2.1",
+    "test-listen": "1.0.2",
+    "xo": "0.18.2"
+  }
+}
