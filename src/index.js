@@ -1,6 +1,9 @@
 const {createClient} = require('contentful');
 const {send} = require('micro');
 const marked = require('marked');
+const cors = require('micro-cors')({
+  origin: '*'
+});
 
 require('dotenv').config();
 
@@ -21,8 +24,8 @@ function postFactory (obj) {
   };
 }
 
-module.exports = async (req, res) => {
+module.exports = cors(async (req, res) => {
   const posts = await query();
   const formattedPosts = posts.items.map(postFactory)
   return send(res, 200, formattedPosts);
-}
+})
