@@ -1,6 +1,12 @@
 const {createClient} = require('contentful');
 const {send} = require('micro');
-const marked = require('marked');
+
+const marked = require('marked').setOptions({
+  highlight: function(code) {
+    return require('highlight.js').highlightAuto(code).value;   
+  }
+});
+
 const cors = require('micro-cors')({
   origin: '*'
 });
