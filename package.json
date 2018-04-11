@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "micro-dev",
-    "start": "micro",
+    "start": "micro -p ${PORT:-3000}",
     "lint": "xo",
     "test": "npm run lint && ava"
   },
